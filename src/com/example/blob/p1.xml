@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LDAP_CONFIGURATIONS desc="SET_LDAP_CONFIGURATIONS"
+    version="1.0" xmlns:xalan="http://xml.apache.org/xslt">
+    <WEB_LOGIN_TYPE desc="SET_WEB_LOGIN_TYPE" o1="NATIVE"
+        o2="WebSSO" o3="LDAP" type="javax.swing.JComboBox">NATIVE</WEB_LOGIN_TYPE>
+    <CS_LOGIN_TYPE desc="SET_CS_LOGIN_TYPE" type="java.lang.String"
+        hidden="y">NATIVE</CS_LOGIN_TYPE>
+    <CS_LOGINDLL desc="SET_CS_LOGINDLL" type="java.lang.String"
+        hidden="y" />
+    <CONNECTIONPARAMS id="1" desc="SET_LDAP_CONNECTIONPARAMS"
+        type="java.lang.String">
+        <LDAP_SERVER key="y" desc="SET_LDAP_SERVER" type="java.lang.String" />
+        <LDAP_PORT desc="SET_LDAP_PORT" min="1" max="65535" type="java.lang.Integer">636</LDAP_PORT>
+        <LDAP_USERNAME desc="SET_LDAP_USERNAME" type="java.lang.String" />
+        <LDAP_PASSWORD desc="SET_LDAP_PASSWORD" pw="y"
+            type="java.lang.String" encrypt="true" />
+        <LDAP_SECURITY desc="SET_LDAP_SECURITY" type="java.lang.Boolean">true</LDAP_SECURITY>
+        <LDAP_CHASE_REFERRALS desc="SET_LDAP_CHASE_REFERRALS"
+            type="java.lang.Boolean">true</LDAP_CHASE_REFERRALS>
+        <LDAP_BASEDN desc="SET_LDAP_BASEDN" type="java.lang.String" />
+        <LDAP_MIN_CONNECTIONS desc="SET_LDAP_MIN_CONNECTIONS" type="java.lang.Integer" >10</LDAP_MIN_CONNECTIONS>
+        <LDAP_MAX_CONNECTIONS desc="SET_LDAP_MAX_CONNECTIONS" type="java.lang.Integer" >20</LDAP_MAX_CONNECTIONS>
+        <LDAP_TIME_OUT desc="SET_LDAP_TIME_OUT" type="java.lang.Integer" >300</LDAP_TIME_OUT>
+        <FIELDMAPS desc="SET_LDAP_FIELDMAPS" type="java.lang.String">
+            <USER_NAME desc="SET_LDAP_FIELD_MAP_USER_NAME" type="java.lang.String">uid</USER_NAME>
+            <EMAIL_ADDR desc="SET_LDAP_FIELD_MAP_EMAIL_ADDR" type="java.lang.String">mail</EMAIL_ADDR>
+            <ACTUAL_NAME desc="SET_LDAP_FIELD_MAP_ACTUAL_NAME" type="java.lang.String">cn</ACTUAL_NAME>
+            <OFFICE_PHONE desc="SET_LDAP_FIELD_MAP_OFFICE_PHONE" type="java.lang.String">telephoneNumber</OFFICE_PHONE>
+        </FIELDMAPS>
+    </CONNECTIONPARAMS>
+</LDAP_CONFIGURATIONS>
