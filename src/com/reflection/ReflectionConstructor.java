@@ -41,6 +41,6 @@ class Foo {
 	}
  
 	public void print() {
-		System.out.println(s);
+		System.out.println("HHHHHHHHHHooooooooooo "+s);
 	}
 }

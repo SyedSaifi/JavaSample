@@ -1,29 +1,33 @@
 package com.example.Lambda;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class ComparatorLambda {
 
 	public static void main(String[] args) {
 
 		List<String> str = new ArrayList<>();
-		str.add("bcd");
-		str.add("cbaa");
-		str.add("ss");
-		str.add("s");
+		str.add("david");
+		str.add("sam");
+		str.add("obamma");
+		str.add("su");
 		
 		System.out.println("Before Sorting..");
-		Iterator<String> it = str.iterator();
-		while(it.hasNext())
-			System.out.print(it.next()+",");
+		printConditionally(str, s -> true);
 		
-		Collections.sort(str, (String first, String second) -> Integer.compare(first.length(), second.length()));
-		
-		System.out.println("");
 		System.out.println("After Sorting..");
-		Iterator<String> itr = str.iterator();
-		while(itr.hasNext())
-			System.out.print(itr.next()+",");
+		Collections.sort(str, (first, second) -> first.compareTo(second));
+		printConditionally(str, s -> true);
+		
+		System.out.println("After sorting conditionally");
+		printConditionally(str, s -> s.startsWith("s"));
 	}
-
+	
+    public static void printConditionally(List<String> str, Predicate<String> pr){
+    	for(String s : str){
+    		if(pr.test(s))
+    			System.out.println(s);
+    	}
+	}
 }

@@ -24,7 +24,7 @@ public class ForEachLambda {
 		//Method Reference
 		list.replaceAll(String::toLowerCase);
 		
-		list.forEach(str->System.out.print(str+" "));
+		list.forEach(System.out::println);
 	}
 
 }

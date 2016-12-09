@@ -5,7 +5,7 @@ public class ReflectNewInstance {
 		//create instance of "Class"
 		Class<?> c = null;
 		try{
-			c=Class.forName("com.reflection.Foo");
+			c=ClassLoader.getSystemClassLoader().loadClass("com.reflection.Foo");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
