@@ -8,7 +8,6 @@ public class SendingThread extends Thread {
 	}
 
 	public void run() {
-		// do something, then signal
 		try {
 			this.semaphore.acquire();
 			System.out.println(Thread.currentThread().getName() + " :: sent signal");

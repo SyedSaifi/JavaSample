@@ -1,3 +1,4 @@
+package com.example.misc;
 class Parent {
 	public Parent(){
 		throw new RuntimeException();

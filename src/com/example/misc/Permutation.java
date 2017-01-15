@@ -1,3 +1,4 @@
+package com.example.misc;
 import java.util.Scanner;
 
 public class Permutation {

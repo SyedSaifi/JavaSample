@@ -9,11 +9,9 @@ public class ProducerConsumerSimplified {
 		
 		Thread thprod = new Thread(new ProducerSimplified(vec,SIZE));
 		Thread thcons = new Thread(new ConsumerSimplified(vec, SIZE));
-		//Thread thcons1 = new Thread(new ConsumerSimplified(vec, SIZE));
 		
 		thprod.start();
 		thcons.start();
-		//thcons1.start();
 		
 	}
 

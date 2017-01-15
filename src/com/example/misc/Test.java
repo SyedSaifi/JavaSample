@@ -1,3 +1,4 @@
+package com.example.misc;
 
 public class Test {
 
