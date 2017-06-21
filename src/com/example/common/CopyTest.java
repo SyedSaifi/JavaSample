@@ -1,27 +1,31 @@
 package com.example.common;
 
 class Subject {
+	private String name;
 
-	  private String name;
-
-	  public String getName() {
-	    return name;
-	  }
-
-	  public void setName(String s) {
-	    name = s;
-	  }
-
-	  public Subject(String s) {
-	    name = s;
-	  }
+	public Subject(String s) {
+		name = s;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String s) {
+		name = s;
+	}
+
+}
 
 	class Student implements Cloneable {
 	  //Contained object
 	  private Subject subj;
-
 	  private String name;
+	  
+	  public Student(String s, String sub) {
+			name = s;
+			subj = new Subject(sub);
+	  }
 
 	  public Subject getSubj() {
 		return subj;
@@ -35,22 +39,17 @@ class Subject {
 		name = s;
 	  }
 
-	  public Student(String s, String sub) {
-		name = s;
-		subj = new Subject(sub);
-	  }
-
 	  public Object clone() {
 		//shallow copy
-		/*try {
+		try {
 		  return super.clone();
 		} catch (CloneNotSupportedException e) {
 		  return null;
-		}*/
+		}
 		  
 		//Deep copy
-			Student s = new Student(name, subj.getName());
-			return s;
+		/*Student s = new Student(name, subj.getName());
+		return s;*/
 	  }
 	}
 

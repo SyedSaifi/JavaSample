@@ -8,6 +8,7 @@ public class ForEachLambda {
 	public static void main(String[] args) {
 
 		List<String> list = new ArrayList<>();
+		
 		list.add("Mark");
 		list.add("Smith");
 		list.add("Roy");

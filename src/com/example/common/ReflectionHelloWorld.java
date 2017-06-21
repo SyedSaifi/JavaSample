@@ -8,7 +8,7 @@ public class ReflectionHelloWorld {
 		//create instance of "Class"
 		Class<?> c = null;
 		try{
-			c=Class.forName("test.Foo");
+			c=Class.forName("com.example.common.Foo");
 		}catch(Exception e){
 			e.printStackTrace();
 		}

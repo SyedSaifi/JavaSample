@@ -21,7 +21,7 @@ public class ZigZag {
 				if(i%4 == 0){
 					System.out.print(arr[i][j]+",");
 				}
-				else if(i%4 == 1 && j == n){
+				else if(i%4 == 1 && j == n-1){
 					System.out.print(arr[i][j]+",");
 				}
 				else if(i%4 == 2){

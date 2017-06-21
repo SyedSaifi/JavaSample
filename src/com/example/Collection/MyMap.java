@@ -5,17 +5,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MyMap<K, V> {
-  private int size;
-  private int DEFAULT_CAPACITY = 16;
+  private int size=0;
+
   @SuppressWarnings("unchecked")
-  private MyEntry<K, V>[] values = new MyEntry[DEFAULT_CAPACITY];
+  private MyEntry<K, V>[] arr = new MyEntry[16];
 
 
   public V get(K key) {
     for (int i = 0; i < size; i++) {
-      if (values[i] != null) {
-        if (values[i].getKey().equals(key)) {
-          return values[i].getValue();
+      if (arr[i] != null) {
+        if (arr[i].getKey().equals(key)) {
+          return arr[i].getValue();
         }
       }
     }
@@ -25,21 +25,20 @@ public class MyMap<K, V> {
   public void put(K key, V value) {
     boolean insert = true;
     for (int i = 0; i < size; i++) {
-      if (values[i].getKey().equals(key)) {
-        values[i].setValue(value);
+      if (arr[i].getKey().equals(key)) {
+        arr[i].setValue(value);
         insert = false;
       }
     }
     if (insert) {
       ensureCapa();
-      values[size++] = new MyEntry<K, V>(key, value);
+      arr[size++] = new MyEntry<K, V>(key, value);
     }
   }
 
   private void ensureCapa() {
-    if (size == values.length) {
-      int newSize = values.length * 2;
-      values = Arrays.copyOf(values, newSize);
+    if (size == arr.length) {
+      arr = Arrays.copyOf(arr, arr.length * 2);
     }
   }
 
@@ -49,8 +48,8 @@ public class MyMap<K, V> {
 
   public void remove(K key) {
     for (int i = 0; i < size; i++) {
-      if (values[i].getKey().equals(key)) {
-        values[i] = null;
+      if (arr[i].getKey().equals(key)) {
+        arr[i] = null;
         size--;
         condenseArray(i);
       }
@@ -59,14 +58,14 @@ public class MyMap<K, V> {
 
   private void condenseArray(int start) {
     for (int i = start; i < size; i++) {
-      values[i] = values[i + 1];
+      arr[i] = arr[i + 1];
     }
   }
 
   public Set<K> keySet() {
     Set<K> set = new HashSet<K>();
     for (int i = 0; i < size; i++) {
-      set.add(values[i].getKey());
+      set.add(arr[i].getKey());
     }
     return set;
   }
